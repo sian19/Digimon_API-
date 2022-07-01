@@ -14,6 +14,12 @@ Site feito em React consumindo uma API do digimon e também com um sistema de lo
   <li>O site foi criado usando componentes funcionais para renderizar os componentes em tela.</li>
   <li>Se usou hooks para criar estados para guardar alguns dados, por exemplo oque foi digitado pelo  usuário como login, senha ou nome do digimon.</li>
   <li>Se utilizou a biblioteca react-router-dom para montar as rotas que serão trafegadas pelo o usuário durante a execução da aplicação.</li>
-  <li>Se utilizaou contextAPI para gerenciar alguns dados de forma global que são usados por outros componentes filhos, como por exemplo o estado users que é responsável por guardar dentro dele os usuários existentes dentro do banco de dados, então eu o coloquei para ser gerenciado de forma global pois outros componentes filhos como o componente login e o register prescisam desse dados, portanto eles devem ser globais para esses componentes terem acesso e trabalhar de forma mais prática.</li>
+  <li>Se utilizou contextAPI para gerenciar alguns dados de forma global que são usados por outros componentes filhos, como por exemplo o estado users que é responsável por guardar dentro dele os usuários existentes dentro do banco de dados, então eu o coloquei para ser gerenciado de forma global pois outros componentes filhos como o componente login e o register prescisam desse dados, portanto eles devem ser globais para esses componentes terem acesso e trabalhar de forma mais prática.</li>
+  <li>Se utilizou o axios para fazer resquest na api e no banco de dados.</li>
+  <li>Para o back end se utilizou o firebase que a forma mais rápida e fácil que existe para se trabalhar com banco de dados, autentificação e etc.</li>
+  <li>Se utilizou funções que são exclusivas do firebase como getDoc que pega os dados existentes no banco de dados firestore, updateDoc que serve para fazer alterar os dados existentes no banco e o addDoc que serve para adicionar um dado no nanco de dados.</li>
+  <li>Se utilizou o storage do firebase para fazer o upload das imagens de avatar definidas pelo usuário.</li>
   <li></li>
+  <li></li>
+  
 </ul>
