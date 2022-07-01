@@ -1,0 +1,52 @@
+.music {
+    position: absolute;
+    top: 0;
+    left: 0;
+    top: 130px;
+    cursor: pointer;
+    width: 130px;
+    background-color: rgba(130, 3, 124, 0.2);
+    left: 60px;
+    padding: 6px 6px;
+    border-radius: 8px;
+    transition: 0.8s;
+    display: flex;
+    gap: 10px;
+}
+
+.music img {
+    width: 28px;
+}
+
+.music h3 {
+    font-size: 1rem;
+    color: var(--orangeYellow);
+}
+
+.music audio {
+    display: none;
+    width: 100%;
+}
+
+.music:hover>h3 {
+    display: none;
+}
+
+.music:hover>audio {
+    display: block;
+}
+
+.music:hover>img {
+    display: none;
+}
+
+.music:hover {
+    width: 250px;
+}
+
+@media screen and (max-width: 560px) {
+    .music {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

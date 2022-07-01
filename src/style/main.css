@@ -1,0 +1,11 @@
+main {
+    background-position: top;
+    padding-top: 100px;
+    position: relative;
+}
+
+@media screen and (max-width: 560px) {
+    main {
+        padding-top: 60px;
+    }
+}

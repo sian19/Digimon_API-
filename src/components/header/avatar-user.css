@@ -1,0 +1,15 @@
+.menu-user {
+    width: 110px;
+    border-radius: 30px;
+    display: flex;
+    height: 38px;
+    color: var(--middleBlue);
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--middleBlue);
+    padding: 10px;
+}
+
+.off-menu-user {
+    display: none;
+}

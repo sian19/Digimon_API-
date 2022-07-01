@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --darkOrange: #FF8811;
+    --orangeYellow: #F4D06F;
+    --middleBlue: #9DD9D2;
+    --floralWhite: #FFF8F0;
+    height: 100%;
+}
+
+body {
+    width: 100vw;
+    height: 100%;
+    font-family: 'Anek Odia', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+button {
+    background-color: var(--middleBlue);
+    cursor: pointer;
+    color: var(--floralWhite);
+    transition: 0.7s;
+}
+
+button:hover {
+    background-color: var(--floralWhite);
+    color: var(--middleBlue);
+}

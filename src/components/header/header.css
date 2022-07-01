@@ -1,0 +1,51 @@
+header {
+    width: 100%;
+    background-color: var(--orangeYellow);
+    position: fixed;
+    z-index: 2;
+}
+
+header .center {
+    max-width: 75rem;
+    margin: auto;
+    padding: 1.2rem 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-desktop img {
+    width: 7.5rem;
+}
+
+.logo-mob {
+    display: none;
+}
+
+.container-avatar {
+    display: none;
+}
+
+
+@media screen and (max-width: 560px) {
+    .logo-desktop img {
+        display: none;
+    }
+
+    .logo-mob {
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        position: fixed;
+    }
+
+    .logo-mob img {
+        width: 5rem;
+    }
+
+    .container-avatar {
+        display: block;
+    }
+
+
+}

@@ -1,0 +1,26 @@
+button.log-out {
+    border: 0;
+    background-color: transparent;
+    font-size: 0.85rem;
+    position: relative;
+}
+
+button::before {
+    content: '';
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--middleBlue);
+    top: 22px;
+    transition: 0.7s;
+}
+
+button:hover:before {
+    width: 100%;
+}
+
+button.log-out:hover {
+    color: var(--floralWhite);
+}

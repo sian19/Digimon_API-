@@ -1,0 +1,90 @@
+.list {
+    width: 100%;
+    height: 100%;
+    padding: 28px 2%;
+    background: url('../../Assets/Banner.jpg') no-repeat center/cover;
+    padding-top: 55px;
+}
+
+.list h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--middleBlue);
+    padding-top: 20px;
+}
+
+.list h2:nth-of-type(2) {
+    font-size: 2rem;
+}
+
+.list .box-list {
+    max-width: 45rem;
+    padding: 15px 10px;
+    background-color: rgba(244, 208, 111, 0.6);
+    border-radius: 6px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.box-list h3 {
+    text-align: center;
+}
+
+.list ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    font-size: 1.2rem;
+    justify-items: center;
+}
+
+@media screen and (min-height: 2098px) {
+    .list {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 697px) {
+    .list ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .list h2 {
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width: 543px) {
+    .list ul {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 1rem;
+    }
+
+    .list h2 {
+        font-size: 1.3rem;
+    }
+
+    .list h2:nth-of-type(2) {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .list ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 703px) and (max-height:2562px) {
+    .list {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .list h2 {
+        padding-top: 50px;
+    }
+}

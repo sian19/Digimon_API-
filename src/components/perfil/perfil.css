@@ -1,0 +1,330 @@
+.perfil {
+    width: 100%;
+    height: 100vh;
+    background: url('../../Assets/1186574.jpg') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 2%;
+    position: relative;
+}
+
+.container-perfil {
+    max-width: 350px;
+    background-color: var(--orangeYellow);
+    border-radius: 12px;
+    padding: 9px 2%;
+}
+
+.container-perfil img {
+    width: 100%;
+    border: 1px solid var(--middleBlue);
+}
+
+.container-perfil h2 {
+    color: var(--middleBlue);
+    font-size: 1.7rem;
+}
+
+.container-perfil h3 {
+    color: var(--floralWhite);
+    font-size: 1.4rem;
+}
+
+.container-perfil p {
+    color: var(--middleBlue);
+    font-size: 1.2rem;
+}
+
+.container-perfil button {
+    border: 0;
+    padding: 8px;
+    border-radius: 30px;
+    display: block;
+    margin-top: 12px;
+    width: 80px;
+}
+
+.container-perfil button::before {
+    content: '';
+    width: 0;
+}
+
+.modal-perfil {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 12px 2%;
+}
+
+.perfil .image {
+    width: 100%;
+    height: 80%;
+}
+
+.perfil .image>img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.modal-perfil .container-modal-perfil {
+    max-width: 300px;
+    padding: 12px;
+    background-color: var(--middleBlue);
+    margin: auto;
+    margin-top: 200px;
+    border-radius: 12px;
+    word-break: break-all;
+    position: relative;
+}
+
+.container-modal-perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+}
+
+.container-modal-perfil>.error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.container-modal-perfil input {
+    color: var(--orangeYellow);
+    outline: 0;
+    width: 80%;
+}
+
+.container-modal-perfil input[type="text"] {
+    color: aqua;
+    padding: 5px 0;
+    padding-left: 5px;
+}
+
+.container-modal-perfil>.error button {
+    border: 1px solid red;
+    padding: 12px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 18px;
+}
+
+.container-modal-perfil>.error button::before {
+    content: '';
+    width: 0;
+}
+
+.off-modal-perfil {
+    display: none;
+}
+
+.container-modal-perfil h3 {
+    color: var(--orangeYellow);
+}
+
+.container-modal-perfil h3:last-of-type {
+    padding-top: 12px;
+}
+
+.modal-perfil .x {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.modal-perfil .x img {
+    width: 100%;
+    height: 100%;
+}
+
+.save {
+    background-color: var(--floralWhite);
+    max-width: 28%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+    color: var(--middleBlue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4px;
+    margin-top: 15px;
+    transition: 0.7s;
+}
+
+.save:hover {
+    color: var(--orangeYellow);
+    background-color: aquamarine;
+}
+
+.modal-reload {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 2%;
+}
+
+.modal-reload .container-modal-reload {
+    max-width: 250px;
+    padding: 12px 2%;
+    background-color: var(--orangeYellow);
+    border-radius: 10px;
+}
+
+.off-modal-reload {
+    display: none;
+}
+
+.off-container-count {
+    display: none;
+}
+
+.reload-sucess button::before {
+    content: '';
+    width: 0;
+}
+
+.reload-sucess button {
+    border: 0;
+    border-radius: 12px;
+    padding: 10px;
+    display: block;
+    margin: auto;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.off-reload-sucess {
+    display: none;
+}
+
+.reload-sucess button:hover:before {
+    width: 0;
+}
+
+.container-modal-reload h3 {
+    color: var(--middleBlue);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.container-modal-reload h4 {
+    font-size: 1.4rem;
+    color: var(--middleBlue);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.container-modal-reload .circle {
+    width: 65px;
+    height: 65px;
+    border: 6px solid var(--middleBlue);
+    border-radius: 50%;
+    border-top-color: var(--floralWhite);
+    animation-name: reload;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    margin: auto;
+    margin-top: 12px;
+}
+
+@keyframes reload {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 560px) and (max-height: 850px) {
+    .perfil {
+        height: auto;
+        padding-bottom: 200px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .container-perfil {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 60px;
+        word-break: break-all;
+    }
+
+    .container-perfil h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .container-perfil h3 {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .container-perfil p {
+        font-size: 0.88rem;
+        text-align: center;
+    }
+
+    .container-perfil button {
+        width: 60px;
+        margin: auto;
+        margin-top: 12px;
+        padding: 5px;
+        font-size: 0.70rem;
+    }
+
+    .container-modal-perfil h3 {
+        font-size: 0.88rem;
+    }
+
+    .container-modal-perfil input[type="text"] {
+        font-size: 0.60rem;
+    }
+
+    .save {
+        font-size: 0.80rem;
+        max-width: 22%;
+    }
+
+    .container-modal-perfil img {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+    }
+}
+
+@media screen and (max-height: 620px) {
+    .perfil {
+        height: auto;
+        padding: 98px 2%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container-perfil {
+        max-width: 220px;
+    }
+}

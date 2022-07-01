@@ -1,0 +1,13 @@
+footer {
+    width: 100%;
+    background-color: var(--orangeYellow);
+}
+
+footer .center {
+    max-width: 62rem;
+    padding: 0.5rem 2%;
+    margin: auto;
+    text-align: center;
+    color: var(--darkOrange);
+    line-height: 1.5;
+}
