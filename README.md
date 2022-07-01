@@ -21,3 +21,6 @@ Site feito em React consumindo uma API do digimon e também com um sistema de lo
   <li>Se utilizou o storage do firebase para fazer o upload das imagens de avatar definidas pelo usuário.</li>
   <li>Se utilizou o localStorage para guardar na memória do navegador o nome e a imagem do avatar do usuário pois no caso dele recarregar a página os dados não sumam e o site não buga as informações do mesmo.</li>
 </ul>
+
+<h3>Link do projeto:</h3>
+<a href="">Clique aqui</a>
