@@ -1,6 +1,6 @@
 .register {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: url('../../Assets/9c670da3958ac321e1ff8768fa174ee9.jpg') no-repeat top/cover;
     padding: 12px 2%;
     display: flex;
@@ -55,11 +55,6 @@
 }
 
 @media screen and (max-height: 745px) {
-    .register {
-        height: auto;
-        padding-top: 35px;
-        padding-bottom: 35px;
-    }
 
     .register form {
         margin-top: 80px;

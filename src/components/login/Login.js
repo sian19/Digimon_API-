@@ -13,7 +13,7 @@ import { firebaseConfig } from '../../firebase/firebase';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 function Login() {
-
+  
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -43,6 +43,7 @@ function Login() {
 
 
     return (
+        <>
         <div className={userLog ? 'off-login' : 'login'}>
 
             <div className={showModal ? 'on-modal' : 'off-modal'}>
@@ -90,6 +91,7 @@ function Login() {
                 </form>
             </div>
         </div>
+        </>
     )
 }
 

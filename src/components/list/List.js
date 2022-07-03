@@ -34,6 +34,7 @@ function List() {
     //------//
 
     return (
+        <>
         <div className='list'>
             <h2>Abaixo a lista com todos os digimons que você pode buscar no site:</h2>
 
@@ -53,6 +54,7 @@ function List() {
                 </ul>
             </div>
         </div>
+        </>
     );
 }
 
