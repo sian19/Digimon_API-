@@ -218,7 +218,6 @@ export const AuthProvider = (props) => {
                 setName(update[0].name);
             }
 
-
         }
 
         else {
@@ -237,6 +236,7 @@ export const AuthProvider = (props) => {
         try {
             let userSave = JSON.parse(localStorage.getItem('user_saved'));
             setUser(userSave);
+            console.log(user);
         }
 
         catch {
@@ -256,7 +256,15 @@ export const AuthProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('user_saved', JSON.stringify(user));
+        if(user){
+        let userData = user.map((it) => {
+            it.password = '';
+            
+            return it;
+        })
+
+        localStorage.setItem('user_saved', JSON.stringify(userData));
+        }
     }, [user])
 
     function login(email, password, users, e) {
