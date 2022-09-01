@@ -54,6 +54,8 @@
     color: var(--darkOrange);
 }
 
+
+
 @media screen and (max-height: 745px) {
 
     .register form {

@@ -1,76 +1,45 @@
-import React, { useContext } from 'react';
+import React,{useEffect} from 'react';
 
 import './results.css';
 
 import Error from './Error';
 
-import { useDataContext } from '../context/AuthContext';
-
 import Cards from '../cards/Cards';
 
-let clicou = '';
 
-function Results({ click, setClick }) {
+function Results({ click, updateDig, text, setUpdateDigi }) {
 
-    const { text, char } = useContext(useDataContext);
+    //Código abaixo responsável por limpar a array que guarda os digimons caso o usuário limpe o campo de busca com a tecla backspace//
+    useEffect(()=>{
+        document.addEventListener('keydown', detectKeyDown, true)
+    },[])
+    
+    const detectKeyDown = (e)=>{
+        if(e.key === 'Backspace'){
+            setUpdateDigi([]);
+        }
+    }
 
-    if (text != '' && click && clicou == '') {
-        clicou = 'clicado';
-
-        let updateChar = char.filter((item) => {
-            let format = '';
-
-            for (let i = 0; i < text.length; i++) {
-                format += item.name[i];
-            }
-
-            return format == text
-        })
-
-        if (updateChar == '') {
-            return (
-                <Error text={text} />
-            )
+    //
+    
+        if(!text && click){
+            return <Error text={text}/>
         }
 
-        else {
-            return <Cards updateChar={updateChar} />
+        else if(updateDig == '' && !click){
+            return <></>
         }
+    
+        else if(updateDig == '' && click){
+            return <Error text={text}/>
+        }
+    
+        else{
+            console.log(text)
+            return <Cards updateDig={updateDig}/>
+        }
+    
 
-    }
-
-
-    if (text != '' && click && clicou == 'clicado') {
-        clicou = ''
-        setClick(false);
-        return (
-            <></>
-        )
-    }
-
-
-    if (clicou == '' && !click) {
-        return (
-            <></>
-        )
-    }
-
-    if (click && clicou == 'clicado') {
-        setClick(false);
-        clicou = '';
-
-        return (
-            <></>
-        )
-    }
-
-    if (click && text == '') {
-        clicou = 'clicado';
-
-        return (
-            <Error text={text} />
-        )
-    }
 
 }
 

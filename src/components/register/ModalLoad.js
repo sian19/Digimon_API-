@@ -8,7 +8,7 @@ import './modal-load.css';
 
 function ModalLoad({ userCreate, setUserCreate }) {
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(10);
     const [sucess, setSucess] = useState('Criando a conta aguarde...');
 
     const navigate = useNavigate();
@@ -17,14 +17,14 @@ function ModalLoad({ userCreate, setUserCreate }) {
 
     useEffect(() => {
         if (userCreate) {
-            if (count >= 11) {
+            if (count < 0) {
                 setSucess('Conta criada com sucesso!');
                 return
             }
 
             else {
                 setTimeout(() => {
-                    setCount(count => count + 1);
+                    setCount(count => count - 1);
                 }, 1000)
             }
         }
@@ -34,8 +34,8 @@ function ModalLoad({ userCreate, setUserCreate }) {
         <div className={userCreate ? 'modal-load' : 'off-modal-load'}>
             <div className='container'>
                 <h3>{sucess}</h3>
-                <div className='loader' style={{ display: count < 11 ? 'block' : 'none' }}></div>
-                <div className='contador' style={{ display: count < 11 ? 'block' : 'none' }}>
+                <div className='loader' style={{ display: count > -1 ? 'block' : 'none' }}></div>
+                <div className='contador' style={{ display: count > -1 ? 'block' : 'none' }}>
                     <h2 className='count'>{count}</h2>
                 </div>
 
@@ -46,11 +46,11 @@ function ModalLoad({ userCreate, setUserCreate }) {
                     addCounter(3);
                     navigate('/login');
                 }} style={{
-                    cursor: count >= 11 ? 'pointer' : 'nodrop',
-                    display: count >= 11 ? 'block' : 'none'
+                    cursor: count < 0 ? 'pointer' : 'nodrop',
+                    display: count < 0 ? 'block' : 'none'
                 }}>Clique aqui</button>
 
-                <button style={{ display: count >= 11 ? 'none' : 'block' }}>Aguarde...</button>
+                <button style={{ display: count < 0 ? 'none' : 'block' }}>Aguarde...</button>
 
             </div>
         </div >

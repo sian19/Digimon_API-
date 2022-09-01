@@ -4,6 +4,8 @@ import axios from 'axios';
 import { firebaseConfig } from '../../firebase/firebase';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
+import img from '../../Assets/ponto-de-interrogacao-og.jpg';
+
 const saveCount = 'save';
 
 export const useDataContext = createContext();
@@ -58,12 +60,29 @@ export const AuthProvider = (props) => {
 
     //Abaixo os códigos para renderizar a API//
     const [char, setChar] = useState([]);
+    const [digimons, setDigimons] = useState([]);
 
     useEffect(() => {
 
         axios.get('https://digimon-api.vercel.app/api/digimon').then(response => setChar(response.data));
 
     }, [])
+
+    //Abaixo coloca na array o número de cada digimon//
+    useEffect(()=>{
+        let num = 0;
+        
+        let updateDigimon = char.map((digi)=> {
+            num += 1;
+            digi.number = num;
+
+            return digi;
+        })
+
+        setDigimons(updateDigimon);
+
+    },[char]);
+    //
 
 
     //Abaixo os estados ara alterar a cor do menu desktop e mobile //
@@ -99,14 +118,6 @@ export const AuthProvider = (props) => {
 
     //
 
-    //Abaixo os  estados e códigos responsáveis para guardar o nome do digimon que o usuário digitou //
-    const [text, setText] = useState('');
-
-    const addText = (value) => {
-        setText(value)
-    }
-
-    //
 
     const addCounter = (value) => {
         setCounterColor(value);
@@ -236,7 +247,6 @@ export const AuthProvider = (props) => {
         try {
             let userSave = JSON.parse(localStorage.getItem('user_saved'));
             setUser(userSave);
-            console.log(user);
         }
 
         catch {
@@ -281,10 +291,17 @@ export const AuthProvider = (props) => {
         }
 
         else {
+            let verificationImg = updateUser[0].imageAvatar;
+            if(verificationImg.includes('undefined')){
+                setAvatar(img);
+            }
+
+            else{
+                setAvatar(JSON.parse(updateUser[0].imageAvatar));
+            }
             setLogErr(false);
             setShowModal(true);
             reduceName(updateUser[0].name);
-            setAvatar(JSON.parse(updateUser[0].imageAvatar));
             setUser(updateUser);
         }
 
@@ -305,7 +322,7 @@ export const AuthProvider = (props) => {
 
 
     return (
-        <useDataContext.Provider value={{ colorList1, colorList2, colorList3, colorList4, countColor, addCounter, addShowMenu, movementMenu, char, text, addText, login, logErr, showModal, userLog, addUserLog, logOut, name, avatar, users, user, errorReload, resetReload, updateUser }}>{props.children}</useDataContext.Provider>
+        <useDataContext.Provider value={{ colorList1, colorList2, colorList3, colorList4, countColor, addCounter, addShowMenu, movementMenu, char, login, logErr, showModal, userLog, addUserLog, logOut, name, avatar, users, user, errorReload, resetReload, updateUser, digimons }}>{props.children}</useDataContext.Provider>
     )
 }
 

@@ -184,14 +184,12 @@ function Register() {
         }
 
         if (textErrorPass == '' && pass == repPass && letterSpacePass.length == 0 && textEmail == '' && textName == '' && letterSpaceName.length == 0) {
-            if (imgAvatar == '') {
-                alert(' Por favor escolha uma imagem para seu avatar');
+            if(!imgAvatar){
+                
             }
-
-            else {
-                registerUser(imgAvatar, email);
-                setUserCreate(true);
-            }
+            registerUser(imgAvatar, email);
+            setUserCreate(true);
+            
 
         }
 

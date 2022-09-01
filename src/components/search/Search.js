@@ -9,12 +9,30 @@ import Results from '../results/Results';
 import { Link } from 'react-router-dom';
 
 import { useDataContext } from '../context/AuthContext';
+import { useEffect } from 'react';
+
 
 function Search() {
 
     const [click, setClick] = useState(false);
+    const [text, setText] = useState('');
+    const [updateDig, setUpdateDigi] = useState([])
 
-    const { addText, userLog, addCounter } = useContext(useDataContext);
+    const {userLog, addCounter, digimons} = useContext(useDataContext);
+
+    //Função que filtra os digimons que o usuário digita//
+        function searchDigimons(){
+            if(text){
+                const caseDigi = text.toLowerCase();
+                setUpdateDigi(digimons.filter((digi)=> {
+                    return digi.name.toLowerCase().includes(caseDigi);
+                    
+                }))
+            }
+        }
+    //
+
+    const [names, setNames] = useState([]);
 
     if (userLog) {
         return (
@@ -22,21 +40,22 @@ function Search() {
                 <h1>Digite o nome do digimon abaixo</h1>
 
                 <div className='input'>
-                    <input type="text" placeholder='EX: Agumon'
+                    <input value = {text} type="text" placeholder='EX: Agumon'
                         onChange={(e) => {
-
-                            addText(e.target.value);
+                            setClick(false);
+                            setText(e.target.value);
 
                         }} />
 
                     <button onClick={() => {
 
+                        searchDigimons();
                         setClick(true);
 
                     }}><img src={Lupa} alt="buscar" /></button>
                 </div>
 
-                <Results click={click} setClick={setClick} />
+                <Results click={click} updateDig={updateDig} text={text} setUpdateDigi={setUpdateDigi}/>
 
             </div >
         );

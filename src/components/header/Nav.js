@@ -8,6 +8,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { useDataContext } from '../context/AuthContext';
 
+import img from '../../Assets/ponto-de-interrogacao-og.jpg';
+
 
 function Nav() {
 
@@ -15,10 +17,17 @@ function Nav() {
 
     const { colorList1, colorList2, colorList3, colorList4, addCounter, logOut } = useContext(useDataContext);
 
-
     //Estado que verifica se o usuário está logado//
     const { userLog, name, avatar } = useContext(useDataContext);
     //
+
+     //Código abaixo verifica se o usuário cadastrou uma imagem ao criar sua conta//
+     let verificationImg = avatar;
+     let ramdomImg = false;
+     if(verificationImg.includes('undefined')){
+         ramdomImg = true;
+     }
+     //
 
 
     return (
@@ -70,7 +79,7 @@ function Nav() {
                 }}>Log out</button></li>
 
                 <div className='avatar-user-mobile' style={{ display: userLog ? 'block' : 'none' }}>
-                    <div className='img' ><img src={avatar} alt="" /></div>
+                    <div className='img' ><img src={!ramdomImg ? avatar : img} alt="" /></div>
                     <h4>{name}</h4>
                 </div>
 
